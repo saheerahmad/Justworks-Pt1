@@ -1,0 +1,12 @@
+html,
+body {
+    background-color: black;
+    align-items: center;
+}
+
+.Import {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    color: rgb(170, 145, 0);
+}
