@@ -4,9 +4,16 @@ body {
     align-items: center;
 }
 
-.Import {
+#Import {
     position: absolute;
     top: 40%;
     left: 30%;
     color: rgb(170, 145, 0);
+}
+
+.hide {
+    display: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
 }
