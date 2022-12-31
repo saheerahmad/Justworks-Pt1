@@ -1,19 +1,12 @@
-import base64
 from datetime import datetime
 from io import BytesIO
-from typing import Union
-import csv
 from fastapi import FastAPI, Body, Request, File, Response, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse, FileResponse
-from fastapi.templating import Jinja2Templates
-import numpy as np
+from fastapi.responses import FileResponse
 import pandas as pd
-from requests import request
 import dataframe_image as dfi
 
 app = FastAPI()
-templates = Jinja2Templates(directory="htmlDirectory")
 
 out = pd.DataFrame(columns=('Customer Id','MM/YYYY','MinBalance','MaxBalance','EndingBalance'))
 
@@ -28,11 +21,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-@app.get("/")
-async def main():
-    return {"message": "Hello World"}
-
 
 @app.post("/submitCSV")
 async def handleCSV(file: bytes = File(...)):
