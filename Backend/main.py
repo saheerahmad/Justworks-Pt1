@@ -25,7 +25,7 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    return ("message" : "hello Saheer")
+    return {"message":"hello Saheer"}
 
 @app.post("/submitCSV")
 async def handleCSV(file: bytes = File(...)):
