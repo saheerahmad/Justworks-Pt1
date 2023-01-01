@@ -1,3 +1,4 @@
+
 from datetime import datetime
 from io import BytesIO
 from fastapi import FastAPI, Body, Request, File, Response, UploadFile, Form
@@ -21,6 +22,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def home():
+    return ("message" : "hello Saheer")
 
 @app.post("/submitCSV")
 async def handleCSV(file: bytes = File(...)):
