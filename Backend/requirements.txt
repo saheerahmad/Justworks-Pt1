@@ -1,4 +1,6 @@
-io
+aiohttp
+aiosignal
+anyio
 dataframe-image
 pandas
 fastapi
