@@ -37,7 +37,7 @@ function App() {
       method: "POST",
       body: formData
     };
-    fetch("http://127.0.0.1:8000/submitCSV/", reqOptions).then(response => response.json().then(function(response){
+    fetch("https://justworks-373502.el.r.appspot.com/submitCSV/", reqOptions).then(response => response.json().then(function(response){
       console.log(response)
     }));
     // document.getElementById("Import").
@@ -46,7 +46,7 @@ function App() {
 
 
 
-    fetch("http://127.0.0.1:8000/getSummary/")
+    fetch("https://justworks-373502.el.r.appspot.com/getSummary/")
     .then( res => res.blob() )
     .then( blob => {
       var file = window.URL.createObjectURL(blob);
